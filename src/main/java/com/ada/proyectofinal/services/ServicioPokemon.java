@@ -20,7 +20,7 @@ public class ServicioPokemon {
         return repositoryPokemon.findAll();
     }
 
-    public Optional<Pokemon> findById(int id) {
+    public Pokemon findById(int id) {
 
         return repositoryPokemon.findById(id);
     }

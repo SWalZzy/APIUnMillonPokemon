@@ -44,10 +44,10 @@ public class ControllerBatalla {
     public Resultado batallar(@PathVariable("idEntrenador") int idEntrenador) {
         Entrenador entrenador = servicioEntrenador.findById(idEntrenador);
         List<Pokemon> pokemonsEntrenador = entrenador.getPokemons();
-        //Alineacion alineacion = entrenador.getPokemons().get(0).getAlineacion();
+
         Entrenador entrenador1 = servicioEntrenador.recuperarEntrenador1();
         List<Pokemon> pokemonsEntrenador1 = entrenador1.getPokemons();
-        //Alineacion alineacion1 = entrenador1.getPokemons().get(0).getAlineacion();
+
         Resultado resultado = new Resultado();
         Random random = new Random();
         int dadoEntrenador = random.nextInt(20) + 1;

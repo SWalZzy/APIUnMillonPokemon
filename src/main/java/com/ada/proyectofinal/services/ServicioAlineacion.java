@@ -31,5 +31,4 @@ public class ServicioAlineacion {
     public void deleteAll(){
         repositoryAlineacion.deleteAll();
     }
-
 }

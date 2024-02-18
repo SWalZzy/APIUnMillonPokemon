@@ -13,6 +13,9 @@ public interface RepositoryPokemon extends JpaRepository<Pokemon, Integer>{
     @Query(value = "SELECT * FROM pokemon WHERE entrenador_id IS NULL Limit :limit", nativeQuery = true)
     List<Pokemon> recuperarPokemons(int limit);
 
+    @Query(value = "SELECT * FROM pokemon where id = :id", nativeQuery = true)
+    Pokemon findById(int id);
+
     @Query(value = "SELECT * FROM pokemon WHERE entrenador_id = :id",nativeQuery = true)
     List<Pokemon> getPokemonsByEntrenadorId(int id);
 
