@@ -30,6 +30,23 @@ public class ControllerPokemon {
         return servicioPokemon.findById(id);
     }
 
+    @PutMapping("/update/{id}")
+    public void updatePokemon(@PathVariable("id") int id, @RequestBody Pokemon pokemon){
+        Pokemon pokemonToUpdate = servicioPokemon.findById(id);
+        pokemonToUpdate.setName(pokemon.getName());
+        pokemonToUpdate.setType(pokemon.getType());
+        pokemonToUpdate.setLevel(pokemon.getLevel());
+        pokemonToUpdate.setHp(pokemon.getHp());
+        pokemonToUpdate.setAttack(pokemon.getAttack());
+        pokemonToUpdate.setDefence(pokemon.getDefence());
+        pokemonToUpdate.setSpeed(pokemon.getSpeed());
+        pokemonToUpdate.setGender(pokemon.getGender());
+        pokemonToUpdate.setValor(pokemon.getValor());
+        pokemonToUpdate.setHiresURL(pokemon.getHiresURL());
+        servicioPokemon.save(pokemonToUpdate);
+    }
+
+
     @PostMapping("/comprarVida/{id}")
     public void comprarVida(@PathVariable("id") int idPokemon){
         Pokemon pokemon = servicioPokemon.findById(idPokemon);
